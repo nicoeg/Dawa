@@ -8,6 +8,7 @@
 namespace Nicoeg\Dawa;
 
 use GuzzleHttp\Client;
+use Illuminate\Support\Collection;
 
 class Dawa {
     private $client;
@@ -33,11 +34,15 @@ class Dawa {
     /**
      * Decodes a Guzzle response' body
      * @param $result
-     * @return object
+     * @return Collection
      */
     public function decodeResponse($result) {
-        $body = $result->getBody()->getContents();
+        $body = $result->getBody();
+        $decoded = json_decode($body);
 
-        return json_decode($body);
+        if (is_array($decoded))
+            return new Collection($decoded);
+
+        return $decoded;
     }
 }
