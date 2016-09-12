@@ -13,9 +13,17 @@
         "guzzlehttp/guzzle": "^6.2",
         "tightenco/collect": "^5.3"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^5.5"
+    },
     "autoload": {
         "psr-4": {
             "Nicoeg\\Dawa\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/ZipcodesTest.php"
+        ]
     }
 }
