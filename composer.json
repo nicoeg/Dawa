@@ -1,12 +1,17 @@
 {
     "name": "nicoeg/dawa",
-    "description": "A Laravel package for Dawa http://dawa.aws.dk",
-    "type": "library",
+    "description": "A PHP package for Dawa http://dawa.aws.dk",
+    "keywords": ["Dawa", "aws.dk", "laravel"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Nicolaj Egelund",
             "email": "nicomanden@gmail.com"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "Nicoeg\\Dawa\\": "src/"
+        }
+    }
 }
