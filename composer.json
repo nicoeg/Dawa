@@ -1,0 +1,12 @@
+{
+    "name": "nicoeg/dawa",
+    "description": "A Laravel package for Dawa http://dawa.aws.dk",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Nicolaj Egelund",
+            "email": "nicomanden@gmail.com"
+        }
+    ],
+    "require": {}
+}
