@@ -3,7 +3,7 @@
     "description": "A PHP package for Dawa http://dawa.aws.dk",
     "keywords": ["Dawa", "aws.dk", "laravel"],
     "license": "MIT",
-    "minimum-stability": "0.1",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Nicolaj Egelund",
