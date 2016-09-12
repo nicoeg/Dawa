@@ -57,7 +57,7 @@ trait Zipcodes {
 
     /**
      * Returns zipcodes for a list of municipalities
-     * @param $municipalities
+     * @param array $municipalities
      * @param array $data
      * @return Collection
      */
