@@ -13,7 +13,7 @@ Inkluder composers autoload hvor Dawa skal bruges eller i en bootstrap fil.
 
 `$dawa->zipcode("5200");`
 
-Se alle metoder under [Apis](ttps://github.com/nicoeg/Dawa/tree/master/src/Apis).
+Se alle metoder under [Apis](https://github.com/nicoeg/Dawa/tree/master/src/Apis).
 
 ###Laravel
 Ved brug med Laravel skal ServiceProvideren tilføjes til `$providers` arrayet i `config/app.php`.
