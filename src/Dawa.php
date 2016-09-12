@@ -18,13 +18,24 @@ class Dawa {
         $this->client = new Client(['base_uri' => $this->base]);
     }
 
+    /**
+     * Create a basic get request
+     * @param string $uri Entry point
+     * @param array $data GET parameters
+     * @return object
+     */
     public function get($uri, $data = []) {
-        return $this->request('get', $uri, $data);
+        $response = $this->client->get($uri, ['query' => $data]);
+
+        return $this->decodeResponse($response);
     }
 
-    public function request($method, $uri, $data) {
-        $result = $this->client->request($method, $uri, ['query' => $data]);
-
+    /**
+     * Decodes a Guzzle response' body
+     * @param $result
+     * @return object
+     */
+    public function decodeResponse($result) {
         $body = $result->getBody()->getContents();
 
         return json_decode($body);
