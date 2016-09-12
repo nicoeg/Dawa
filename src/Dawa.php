@@ -9,8 +9,11 @@ namespace Nicoeg\Dawa;
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Collection;
+use Nicoeg\Dawa\Apis\Zipcodes;
 
 class Dawa {
+    use Zipcodes;
+
     private $client;
 
     private $base = "https://dawa.aws.dk";
