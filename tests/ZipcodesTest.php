@@ -41,6 +41,14 @@ class ZipcodesTest extends TestCase {
         $this->assertEquals("Odense SV", $zipcode->navn);
     }
 
+    public function testZipcodesInCirle() {
+        $dawa = new Dawa;
+
+        $zipcodes = $dawa->zipcodesInCircle("55.245589", "10.469713", "1000");
+
+        $this->assertGreaterThanOrEqual(1, count($zipcodes));
+    }
+
     public function testZipcodesByMunicipalities() {
         $dawa = new Dawa;
 
