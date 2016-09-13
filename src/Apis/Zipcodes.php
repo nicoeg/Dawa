@@ -11,7 +11,7 @@ namespace Nicoeg\Dawa\Apis;
 
 trait Zipcodes {
     /**
-     * Returns zipcode collection
+     * Returns zipcode array
      * @param $data
      * @return array
      */
