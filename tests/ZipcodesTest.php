@@ -14,7 +14,7 @@ class ZipcodesTest extends TestCase {
 
         $zipcodes = $dawa->zipcodes(['q' => 'Odense']);
 
-        $this->assertGreaterThanOrEqual(1, $zipcodes->count());
+        $this->assertGreaterThanOrEqual(1, count($zipcodes));
     }
 
     public function testZipcode() {
@@ -30,7 +30,7 @@ class ZipcodesTest extends TestCase {
 
         $zipcodes = $dawa->zipcodeSearch('Odense');
 
-        $this->assertGreaterThanOrEqual(1, $zipcodes->count());
+        $this->assertGreaterThanOrEqual(1, count($zipcodes));
     }
 
     public function testZipcodeByName() {
@@ -46,10 +46,10 @@ class ZipcodesTest extends TestCase {
 
         $zipcodes = $dawa->zipcodesByMunicipalities(["0101", "0430"]);
 
-        $this->assertGreaterThanOrEqual(1, $zipcodes->count());
+        $this->assertGreaterThanOrEqual(1, count($zipcodes));
 
         $zipcodes = $dawa->zipcodesByMunicipality("0101");
 
-        $this->assertGreaterThanOrEqual(1, $zipcodes->count());
+        $this->assertGreaterThanOrEqual(1, count($zipcodes));
     }
 }

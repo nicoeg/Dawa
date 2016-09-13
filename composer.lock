@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b244cf63041cfecd1c9fbf4921e931dc",
-    "content-hash": "070048f36aab5a52f2ea64552a64b9bd",
+    "hash": "a43b46f2ea4fd962c316c52a07aeca3b",
+    "content-hash": "9774c7a9621ecf7a206b53e14e2e38fa",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -227,53 +227,6 @@
                 "response"
             ],
             "time": "2016-08-06 14:39:51"
-        },
-        {
-            "name": "tightenco/collect",
-            "version": "v5.3.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tightenco/collect.git",
-                "reference": "17c6954ddb42a2869683199b16c376fa283b4911"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/collect/zipball/17c6954ddb42a2869683199b16c376fa283b4911",
-                "reference": "17c6954ddb42a2869683199b16c376fa283b4911",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9.4",
-                "phpunit/phpunit": "~4.1"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/Illuminate/Support/helpers.php"
-                ],
-                "psr-4": {
-                    "Illuminate\\": "src/Illuminate"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
-                }
-            ],
-            "description": "Collect - Illuminate Collections as a separate package.",
-            "keywords": [
-                "collection",
-                "laravel"
-            ],
-            "time": "2016-09-08 17:29:44"
         }
     ],
     "packages-dev": [
