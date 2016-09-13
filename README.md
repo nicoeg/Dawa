@@ -9,7 +9,7 @@ Inkluder composers autoload hvor Dawa skal bruges eller i en bootstrap fil.
  `require 'vendor/autoload.php';`
 
 ##Brug
-`$dawa = new Dawa;`
+`$dawa = new Nicoeg\Dawa\Dawa;`
 
 `$dawa->zipcode("5200");`
 
