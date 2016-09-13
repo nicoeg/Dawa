@@ -8,10 +8,11 @@
 namespace Nicoeg\Dawa;
 
 use GuzzleHttp\Client;
+use Nicoeg\Dawa\Apis\Addresses;
 use Nicoeg\Dawa\Apis\Zipcodes;
 
 class Dawa {
-    use Zipcodes;
+    use Zipcodes, Addresses;
 
     private $client;
 
