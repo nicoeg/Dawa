@@ -8,7 +8,6 @@
 namespace Nicoeg\Dawa;
 
 use GuzzleHttp\Client;
-use Illuminate\Support\Collection;
 use Nicoeg\Dawa\Apis\Zipcodes;
 
 class Dawa {
@@ -42,9 +41,6 @@ class Dawa {
     public function decodeResponse($result) {
         $body = $result->getBody();
         $decoded = json_decode($body);
-
-        if (is_array($decoded))
-            return new Collection($decoded);
 
         return $decoded;
     }

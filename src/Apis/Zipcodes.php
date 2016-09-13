@@ -9,13 +9,11 @@
 namespace Nicoeg\Dawa\Apis;
 
 
-use Illuminate\Support\Collection;
-
 trait Zipcodes {
     /**
      * Returns zipcode collection
      * @param $data
-     * @return Collection
+     * @return array
      */
     public function zipcodes($data) {
         return $this->get('postnumre', $data);
@@ -35,7 +33,7 @@ trait Zipcodes {
      * Returns zipcodes for a given query
      * @param $query
      * @param array $data
-     * @return Collection
+     * @return array
      */
     public function zipcodeSearch($query, $data = []) {
         $data['q'] = $query;
@@ -51,15 +49,19 @@ trait Zipcodes {
      */
     public function zipcodeByName($name, $data = []) {
         $data['navn'] = $name;
+        $zipcodes = $this->zipcodes($data);
 
-        return $this->zipcodes($data)->first();
+        if (!empty($zipcodes))
+            return $this->zipcodes($data)[0];
+
+        return null;
     }
 
     /**
      * Returns zipcodes for a list of municipalities
      * @param array $municipalities
      * @param array $data
-     * @return Collection
+     * @return array
      */
     public function zipcodesByMunicipalities($municipalities, $data = []) {
         $municipalities = implode('|', $municipalities);
@@ -73,7 +75,7 @@ trait Zipcodes {
      * Returns zipcodes for a municipality
      * @param $municipality
      * @param array $data
-     * @return Collection
+     * @return array
      */
     public function zipcodesByMunicipality($municipality, $data = []) {
         return $this->zipcodesByMunicipalities([$municipality], $data);
@@ -85,7 +87,7 @@ trait Zipcodes {
      * @param $longitude
      * @param string|integer $radius in meters
      * @param array $data
-     * @return Collection
+     * @return array
      */
     public function zipcodesInCircle($latitude, $longitude, $radius, $data = []) {
         $circle = implode(',', compact('longitude', 'latitude', 'radius'));
@@ -100,7 +102,7 @@ trait Zipcodes {
      * Returns zipcodes which overlaps a given polygon
      * @param array $polygon List of coordinates (Latitude first) eg. [[55.0, 10.00], [55.3, 10.4]]
      * @param array $data
-     * @return Collection
+     * @return array
      */
     public function zipcodesInPolygon($polygon, $data = []) {
         $string = "[[";
