@@ -39,5 +39,12 @@ Herefter kan alle Dawa klassens metoder kaldes således.
 | zipcodesByMunicipality($municipality, $data            | kommunekode, GET parametre                            | array  |
 | zipcodesInCircle($latitude, $longitude, $radius, $data | breddegrad, længdegrad, radius i meter, GET parametre | array  |
 | zipcodesInPolygon($polygon, $data)                     | Under udvikling                                       | array  |
+
+#--
+
+| [Adresser](http://dawa.aws.dk/adressedok)                | Parametre                                             | Return |
+| -------------------------------------------------------  |-------------------------------------------------------|--------|
+| addresses($data)                                         | GET parametre                                         | array  |
+| addressesInCircle($latitude, $longitude, $radius, $data) | breddegrad, længdegrad, radius i meter, GET parametre | array  |
  
 ####Stadig under udvikling, og mangler derfor stadig mange metoder.
