@@ -18,8 +18,27 @@ class Dawa {
 
     private $base = "https://dawa.aws.dk";
 
-    public function __construct() {
+    private $perpage = 0;
+    private $page = 0;
+
+    public function __construct($perpage = 0, $page = 1) {
         $this->client = new Client(['base_uri' => $this->base]);
+
+        if ($perpage > 0)
+            $this->paginate($perpage, $page);
+    }
+
+    /**
+     * Paginate request
+     * @param int $perpage items per page
+     * @param int $page page number
+     * @return $this
+     */
+    public function paginate($perpage, $page = 1) {
+        $this->perpage = $perpage;
+        $this->page = $page;
+
+        return $this;
     }
 
     /**
@@ -29,6 +48,11 @@ class Dawa {
      * @return object
      */
     public function get($uri, $data = []) {
+        if ($this->perpage > 0) {
+            $data['per_side'] = $this->perpage;
+            $data['side'] = $this->page;
+        }
+
         $response = $this->client->get($uri, ['query' => $data]);
 
         return $this->decodeResponse($response);
@@ -37,7 +61,7 @@ class Dawa {
     /**
      * Decodes a Guzzle response' body
      * @param $result
-     * @return Collection
+     * @return array
      */
     public function decodeResponse($result) {
         $body = $result->getBody();
