@@ -7,7 +7,10 @@ return [
         'methods' => [
             'general',
             'singular',
+            'search',
             'byName',
+            'byMunicipality',
+            'byMunicipalities',
             'inCircle',
         ]
     ],
@@ -17,6 +20,9 @@ return [
         'methods' => [
             'general',
             'singular',
+            'search',
+            'byMunicipality',
+            'byMunicipalities',
             'inCircle'
         ]
     ]

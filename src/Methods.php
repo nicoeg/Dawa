@@ -28,6 +28,24 @@ trait Methods {
         return null;
     }
 
+    public function search($uri, $query, $data) {
+        $data['q'] = $query;
+
+        return $this->get($uri, $data);
+    }
+
+    public function byMunicipalities($uri, $municipalities, $data = []) {
+        $municipalities = implode('|', $municipalities);
+
+        $data['kommunekode'] = $municipalities;
+
+        return $this->get($uri, $data);
+    }
+
+    public function byMunicipality($uri, $municipality, $data = []) {
+        return $this->byMunicipalities($uri, [$municipality], $data);
+    }
+
     public function inCircle($uri, $latitude, $longitude, $radius, $data = []) {
         $circle = implode(',', compact('longitude', 'latitude', 'radius'));
 
