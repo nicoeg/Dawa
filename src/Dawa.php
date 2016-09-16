@@ -8,14 +8,13 @@
 namespace Nicoeg\Dawa;
 
 use GuzzleHttp\Client;
-use Nicoeg\Dawa\Apis\Addresses;
-use Nicoeg\Dawa\Apis\Zipcodes;
 
 class Dawa {
-    use Zipcodes, Addresses;
+    use Methods;
 
     private $client;
 
+    private $apis;
     private $base = "https://dawa.aws.dk";
 
     private $perpage = 0;
@@ -23,6 +22,8 @@ class Dawa {
 
     public function __construct($perpage = 0, $page = 1) {
         $this->client = new Client(['base_uri' => $this->base]);
+
+        $this->apis = include __DIR__ . '/apis.php';
 
         if ($perpage > 0)
             $this->paginate($perpage, $page);
@@ -39,6 +40,39 @@ class Dawa {
         $this->page = $page;
 
         return $this;
+    }
+
+    public function __call($method, $arguments) {
+        foreach ($this->apis as $key => $api) {
+            // Remove entrypoint from method call
+            $function = lcfirst(str_replace($key, '', $method));
+
+            // If is a basic api call
+            if ($function == "")
+                $function = "general";
+
+            // If is a singular call like: zipcode("5250")
+            if ($function == $api['singular']) {
+                $method = $key;
+                $function = "singular";
+            }
+
+            // If is a singular method call like: zipcodeByName("Odense SV")
+            if (str_contains($function, $api['singular'])) {
+                $method = $key;
+                $function = lcfirst(str_replace($api['singular'], '', $function));
+            }
+
+            // Check if entrypoint exists and if has the called method
+            if (str_contains($method, $key) && in_array($function, $api['methods'])) {
+                // Add the uri to parameter list
+                array_unshift($arguments, $api['uri']);
+
+                return call_user_func_array(array($this, $function), $arguments);
+            }
+        }
+        
+        throw new \Exception("Call to undefined method " . $method);
     }
 
     /**
