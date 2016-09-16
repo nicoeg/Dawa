@@ -1,4 +1,4 @@
-# Dawa PHP Wrapper
+# Dawa API PHP Wrapper
 PHP Wrapper til [Danmarks Adressers Web API](http://dawa.aws.dk).
 
 ##Installering - composer
@@ -12,6 +12,14 @@ Inkluder composers autoload hvor Dawa skal bruges eller i en bootstrap fil.
 `$dawa = new Nicoeg\Dawa\Dawa;`
 
 `$dawa->zipcode("5200");`
+
+For pagination
+
+`$dawa->paginate(25, 1)->zipcodes(['q' => 'Odense']);`
+
+Eller brug i constructor
+
+`$dawa = new Dawa(25, 1);`
 
 Se alle metoder under [Apis](https://github.com/nicoeg/Dawa/tree/master/src/Apis), eller længere nede.
 
