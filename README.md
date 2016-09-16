@@ -17,10 +17,6 @@ For pagination
 
 `$dawa->paginate(25, 1)->zipcodes(['q' => 'Odense']);`
 
-Eller brug i constructor
-
-`$dawa = new Dawa(25, 1);`
-
 Se alle metoder under længere nede.
 
 ###Laravel
@@ -35,7 +31,6 @@ Hvis du vil bruge facaden skal den tilføjes til `$facades` arrayet længere ned
 Herefter kan alle Dawa klassens metoder kaldes således.
  
 `Dawa::zipcodeSearch("Odense");`
-
 
 ###Metoder
 
