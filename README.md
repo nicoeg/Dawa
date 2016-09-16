@@ -21,7 +21,7 @@ Eller brug i constructor
 
 `$dawa = new Dawa(25, 1);`
 
-Se alle metoder under [Apis](https://github.com/nicoeg/Dawa/tree/master/src/Apis), eller længere nede.
+Se alle metoder under længere nede.
 
 ###Laravel
 Ved brug med Laravel skal ServiceProvideren tilføjes til `$providers` arrayet i `config/app.php`.
@@ -36,8 +36,22 @@ Herefter kan alle Dawa klassens metoder kaldes således.
  
 `Dawa::zipcodeSearch("Odense");`
 
+
 ###Metoder
-| [Postnumre](http://dawa.aws.dk/postnummerdok)          | Parametre                                             | Return |
+
+Der er lavet metoder for følgende:
+
+[Postnumre](http://dawa.aws.dk/postnummerdok) zipcodes
+
+[Adresser](http://dawa.aws.dk/adressedok) addresses
+
+[Adgangsadresser](http://dawa.aws.dk/adgangsadressedok) accessAddressess
+
+[Veje](http://dawa.aws.dk/vejedok) streetNames
+
+Tjek [apis.php](https://github.com/nicoeg/Dawa/blob/master/src/apis.php) for hvilke entrypoints der understøtter hvad.
+
+| Metoder(zipcodes bruges som eksempel)          | Parametre                                             | Return |
 | -------------------------------------------------------|-------------------------------------------------------|--------|
 | zipcodes($data)                                        | GET parametre                                         | array  |
 | zipcode($zipcode, $data)                               | postnummer, GET parametre                             | object |
@@ -46,13 +60,5 @@ Herefter kan alle Dawa klassens metoder kaldes således.
 | zipcodesByMunicipalities($municipalities, $data)       | kommunekoder i array, GET parametre                   | array  |
 | zipcodesByMunicipality($municipality, $data            | kommunekode, GET parametre                            | array  |
 | zipcodesInCircle($latitude, $longitude, $radius, $data | breddegrad, længdegrad, radius i meter, GET parametre | array  |
-| zipcodesInPolygon($polygon, $data)                     | Under udvikling                                       | array  |
 
----
-
-| [Adresser](http://dawa.aws.dk/adressedok)                | Parametre                                             | Return |
-| -------------------------------------------------------  |-------------------------------------------------------|--------|
-| addresses($data)                                         | GET parametre                                         | array  |
-| addressesInCircle($latitude, $longitude, $radius, $data) | breddegrad, længdegrad, radius i meter, GET parametre | array  |
- 
 ####Stadig under udvikling, og mangler derfor stadig mange metoder.
