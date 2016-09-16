@@ -44,24 +44,24 @@ class Dawa {
             // Remove entrypoint from method call
             $function = lcfirst(str_replace($key, '', $method));
 
-            // If is a basic api call
+            // If it is a basic api call
             if ($function == "")
                 $function = "general";
 
-            // If is a singular call like: zipcode("5250")
+            // If it is a singular call like: zipcode("5250")
             if ($function == $api['singular']) {
                 $method = $key;
                 $function = "singular";
             }
 
             // If is a singular method call like: zipcodeByName("Odense SV")
-            if (str_contains($function, $api['singular'])) {
+            if (strpos($function, $api['singular']) !== false) {
                 $method = $key;
                 $function = lcfirst(str_replace($api['singular'], '', $function));
             }
 
             // Check if entrypoint exists and if has the called method
-            if (str_contains($method, $key) && in_array($function, $api['methods'])) {
+            if (strpos($method, $key) !== false && in_array($function, $api['methods'])) {
                 // Add the uri to parameter list
                 array_unshift($arguments, $api['uri']);
 
