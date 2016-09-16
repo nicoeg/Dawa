@@ -28,7 +28,7 @@ trait Methods {
         return null;
     }
 
-    public function search($uri, $query, $data) {
+    public function search($uri, $query, $data = []) {
         $data['q'] = $query;
 
         return $this->get($uri, $data);

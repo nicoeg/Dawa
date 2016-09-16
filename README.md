@@ -1,4 +1,4 @@
-# Dawa PHP Wrapper
+# Dawa API PHP Wrapper
 PHP Wrapper til [Danmarks Adressers Web API](http://dawa.aws.dk).
 
 ##Installering - composer
