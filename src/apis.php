@@ -25,5 +25,29 @@ return [
             'byMunicipalities',
             'inCircle'
         ]
+    ],
+    'accessAddresses' => [
+        'uri' => 'adgangsadresser',
+        'singular' => 'accessAddress',
+        'methods' => [
+            'general',
+            'singular',
+            'search',
+            'byMunicipality',
+            'byMunicipalities',
+            'inCircle'
+        ]
+    ],
+    'streetNames' => [
+        'uri' => 'vejnavne',
+        'singular' => 'streetName',
+        'methods' => [
+            'general',
+            'signular',
+            'search',
+            'byName',
+            'byMunicipality',
+            'byMunicipalities',
+        ]
     ]
 ];
