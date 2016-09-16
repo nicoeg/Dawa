@@ -20,13 +20,10 @@ class Dawa {
     private $perpage = 0;
     private $page = 0;
 
-    public function __construct($perpage = 0, $page = 1) {
+    public function __construct() {
         $this->client = new Client(['base_uri' => $this->base]);
 
         $this->apis = include __DIR__ . '/apis.php';
-
-        if ($perpage > 0)
-            $this->paginate($perpage, $page);
     }
 
     /**
