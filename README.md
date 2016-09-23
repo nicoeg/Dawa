@@ -55,5 +55,3 @@ Tjek [apis.php](https://github.com/nicoeg/Dawa/blob/master/src/apis.php) for hvi
 | zipcodesByMunicipalities($municipalities, $data)       | kommunekoder i array, GET parametre                   | array  |
 | zipcodesByMunicipality($municipality, $data            | kommunekode, GET parametre                            | array  |
 | zipcodesInCircle($latitude, $longitude, $radius, $data | breddegrad, længdegrad, radius i meter, GET parametre | array  |
-
-####Stadig under udvikling, og mangler derfor stadig mange metoder.
