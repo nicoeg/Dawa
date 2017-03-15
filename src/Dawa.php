@@ -39,6 +39,13 @@ class Dawa {
         return $this;
     }
 
+    /**
+     * Checks if method exists in api list then calls method with arguments
+     * @param string $method
+     * @param array $arguments
+     * @return array|object
+     * @throws \Exception
+     */
     public function __call($method, $arguments) {
         foreach ($this->apis as $key => $api) {
             // Remove entrypoint from method call
@@ -65,7 +72,7 @@ class Dawa {
                 // Add the uri to parameter list
                 array_unshift($arguments, $api['uri']);
 
-                return call_user_func_array(array($this, $function), $arguments);
+                return $this->$function(...$arguments);
             }
         }
         
