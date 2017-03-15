@@ -30,7 +30,7 @@ class Dawa {
      * Paginate request
      * @param int $perpage items per page
      * @param int $page page number
-     * @return $this
+     * @return Dawa $this
      */
     public function paginate($perpage, $page = 1) {
         $this->perpage = $perpage;
@@ -76,7 +76,7 @@ class Dawa {
      * Create a basic get request
      * @param string $uri Entry point
      * @param array $data GET parameters
-     * @return object
+     * @return array|object
      */
     public function get($uri, $data = []) {
         if ($this->perpage > 0) {
@@ -92,7 +92,7 @@ class Dawa {
     /**
      * Decodes a Guzzle response' body
      * @param $result
-     * @return array
+     * @return array|object
      */
     public function decodeResponse($result) {
         $body = $result->getBody();
