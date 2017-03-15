@@ -42,7 +42,7 @@ Der er lavet metoder for følgende:
 
 [Adgangsadresser](http://dawa.aws.dk/adgangsadressedok) accessAddressess
 
-[Veje](http://dawa.aws.dk/vejedok) streetNames
+[Veje](http://dawa.aws.dk/vejedok) streets
 
 Tjek [apis.php](https://github.com/nicoeg/Dawa/blob/master/src/apis.php) for hvilke entrypoints der understøtter hvad.
 
