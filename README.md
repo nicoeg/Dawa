@@ -1,14 +1,14 @@
 # Dawa API PHP Wrapper
 PHP Wrapper til [Danmarks Adressers Web API](http://dawa.aws.dk).
 
-##Installering - composer
+## Installering - composer
 `composer require nicoeg/dawa`
 
 Inkluder composers autoload hvor Dawa skal bruges eller i en bootstrap fil.
 
  `require 'vendor/autoload.php';`
 
-##Brug
+## Brug
 `$dawa = new Nicoeg\Dawa\Dawa;`
 
 `$dawa->zipcode("5200");`
@@ -19,7 +19,7 @@ For pagination
 
 Se alle metoder under længere nede.
 
-###Laravel
+### Laravel
 Ved brug med Laravel skal ServiceProvideren tilføjes til `$providers` arrayet i `config/app.php`.
 
 `Nicoeg\Dawa\DawaServiceProvider::class`
@@ -32,7 +32,7 @@ Herefter kan alle Dawa klassens metoder kaldes således.
  
 `Dawa::zipcodeSearch("Odense");`
 
-###Metoder
+### Metoder
 
 Der er lavet metoder for følgende:
 
