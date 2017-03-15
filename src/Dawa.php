@@ -9,6 +9,41 @@ namespace Nicoeg\Dawa;
 
 use GuzzleHttp\Client;
 
+/**
+ * Zipcodes
+ * @method array zipcodes($data = [])
+ * @method object zipcode($zipcode, $data = [])
+ * @method array zipcodeSearch($query, $data = [])
+ * @method object zipcodeByName($name, $data = [])
+ * @method array zipcodesByMunicipalities($municipalities, $data = [])
+ * @method array zipcodesByMunicipality($municipality, $data = [])
+ * @method array zipcodesInCircle($latitude, $longitude, $radius, $data = [])
+ *
+ * Addresses
+ * @method array addresses($data = [])
+ * @method object address($id, $data = [])
+ * @method array addressSearch($query, $data = [])
+ * @method array addressesByMunicipalities($municipalities, $data = [])
+ * @method array addressesByMunicipality($municipality, $data = [])
+ * @method array addressesInCircle($latitude, $longitude, $radius, $data = [])
+ *
+ * AccessAddresses
+ * @method array accessAddresses($data = [])
+ * @method object accessAddress($id, $data = [])
+ * @method array accessAddressSearch($query, $data = [])
+ * @method array accessAddressesByMunicipalities($municipalities, $data = [])
+ * @method array accessAddressesByMunicipality($municipality, $data = [])
+ * @method array accessAddressesInCircle($latitude, $longitude, $radius, $data = [])
+ *
+ * Streets
+ * @method array streets($data = [])
+ * @method object street($street, $data = [])
+ * @method array streetSearch($query, $data = [])
+ * @method object streetByName($name, $data = [])
+ * @method array streetsByMunicipalities($municipalities, $data = [])
+ * @method array streetsByMunicipality($municipality, $data = [])
+ */
+
 class Dawa {
     use Methods;
 
@@ -30,7 +65,7 @@ class Dawa {
      * Paginate request
      * @param int $perpage items per page
      * @param int $page page number
-     * @return $this
+     * @return Dawa $this
      */
     public function paginate($perpage, $page = 1) {
         $this->perpage = $perpage;
@@ -39,6 +74,12 @@ class Dawa {
         return $this;
     }
 
+    /**
+     * Checks if method exists in api list then calls method with arguments
+     * @param string $method
+     * @param array $arguments
+     * @throws \Exception
+     */
     public function __call($method, $arguments) {
         foreach ($this->apis as $key => $api) {
             // Remove entrypoint from method call
@@ -65,7 +106,7 @@ class Dawa {
                 // Add the uri to parameter list
                 array_unshift($arguments, $api['uri']);
 
-                return call_user_func_array(array($this, $function), $arguments);
+                return $this->$function(...$arguments);
             }
         }
         
@@ -76,7 +117,7 @@ class Dawa {
      * Create a basic get request
      * @param string $uri Entry point
      * @param array $data GET parameters
-     * @return object
+     * @return array|object
      */
     public function get($uri, $data = []) {
         if ($this->perpage > 0) {
@@ -92,7 +133,7 @@ class Dawa {
     /**
      * Decodes a Guzzle response' body
      * @param $result
-     * @return array
+     * @return array|object
      */
     public function decodeResponse($result) {
         $body = $result->getBody();

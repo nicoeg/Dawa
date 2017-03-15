@@ -38,9 +38,9 @@ return [
             'inCircle'
         ]
     ],
-    'streetNames' => [
+    'streets' => [
         'uri' => 'vejnavne',
-        'singular' => 'streetName',
+        'singular' => 'street',
         'methods' => [
             'general',
             'signular',

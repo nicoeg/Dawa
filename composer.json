@@ -23,7 +23,7 @@
     },
     "autoload-dev": {
         "classmap": [
-            "tests/ZipcodesTest.php"
+            "tests/MethodsTest.php"
         ]
     }
 }
