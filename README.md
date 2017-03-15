@@ -51,7 +51,7 @@ Tjek [apis.php](https://github.com/nicoeg/Dawa/blob/master/src/apis.php) for hvi
 | zipcodes($data)                                        | GET parametre                                         | array  |
 | zipcode($zipcode, $data)                               | postnummer, GET parametre                             | object |
 | zipcodeSearch($query, $data)                           | søgeord, GET parametre                                | array  |
-| zipcodeByName($name, $data                             | navn, GET parametre                                   | object |
+| zipcodeByName($name, $data)                             | navn, GET parametre                                   | object |
 | zipcodesByMunicipalities($municipalities, $data)       | kommunekoder i array, GET parametre                   | array  |
-| zipcodesByMunicipality($municipality, $data            | kommunekode, GET parametre                            | array  |
-| zipcodesInCircle($latitude, $longitude, $radius, $data | breddegrad, længdegrad, radius i meter, GET parametre | array  |
+| zipcodesByMunicipality($municipality, $data)            | kommunekode, GET parametre                            | array  |
+| zipcodesInCircle($latitude, $longitude, $radius, $data) | breddegrad, længdegrad, radius i meter, GET parametre | array  |
