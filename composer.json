@@ -25,5 +25,15 @@
         "classmap": [
             "tests/MethodsTest.php"
         ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nicoeg\\Dawa\\DawaServiceProvider"
+            ],
+            "aliases": {
+                "Dawa": "Nicoeg\\Dawa\\DawaFacade"
+            }
+        }
     }
 }
