@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/nicoeg/Dawa.svg?branch=master)](https://travis-ci.org/nicoeg/Dawa)
+
 # Dawa API PHP Wrapper
 PHP Wrapper til [Danmarks Adressers Web API](http://dawa.aws.dk).
 
