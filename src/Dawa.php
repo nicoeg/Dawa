@@ -42,6 +42,24 @@ use GuzzleHttp\Client;
  * @method object streetByName($name, $data = [])
  * @method array streetsByMunicipalities($municipalities, $data = [])
  * @method array streetsByMunicipality($municipality, $data = [])
+ *
+ * Municipalities
+ * @method array municipalities($data = [])
+ * @method object municipality($id, $data = [])
+ * @method array municipalitySearch($query, $data = [])
+ * @method object municipalityByName($name, $data = [])
+ * 
+ * Regions
+ * @method array regions($data = [])
+ * @method object region($id, $data = [])
+ * @method array regionSearch($query, $data = [])
+ * @method object regionByName($name, $data = [])
+ * 
+ * Provinces
+ * @method array provinces($data = [])
+ * @method object province($id, $data = [])
+ * @method array provinceSearch($query, $data = [])
+ * @method object provinceByName($name, $data = [])
  */
 
 class Dawa {
