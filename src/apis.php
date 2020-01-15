@@ -43,7 +43,7 @@ return [
         'singular' => 'street',
         'methods' => [
             'general',
-            'signular',
+            'singular',
             'search',
             'byName',
             'byMunicipality',
