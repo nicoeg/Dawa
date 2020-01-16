@@ -42,12 +42,14 @@ use GuzzleHttp\Client;
  * @method object streetByName($name, $data = [])
  * @method array streetsByMunicipalities($municipalities, $data = [])
  * @method array streetsByMunicipality($municipality, $data = [])
+ * @method array streetsInCircle($latitude, $longitude, $radius, $data = [])
  *
  * Municipalities
  * @method array municipalities($data = [])
  * @method object municipality($id, $data = [])
  * @method array municipalitySearch($query, $data = [])
  * @method object municipalityByName($name, $data = [])
+ * @method array municipalityInCircle($latitude, $longitude, $radius, $data = [])
  * 
  * Regions
  * @method array regions($data = [])

@@ -48,6 +48,7 @@ return [
             'byName',
             'byMunicipality',
             'byMunicipalities',
+            'inCircle',
         ]
     ],
     'municipalities' => [
@@ -58,6 +59,7 @@ return [
             'singular',
             'search',
             'byName',
+            'inCircle',
         ]
     ],
     'regions' => [
