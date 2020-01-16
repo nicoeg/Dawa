@@ -46,6 +46,12 @@ Der er lavet metoder for følgende:
 
 [Veje](http://dawa.aws.dk/vejedok) streets
 
+[Kommuner](https://dawa.aws.dk/dok/api/kommune) municipalities
+
+[Regioner](https://dawa.aws.dk/dok/api/region) regions
+
+[Landsdele](https://dawa.aws.dk/dok/api/landsdel) provinces
+
 Tjek [apis.php](https://github.com/nicoeg/Dawa/blob/master/src/apis.php) for hvilke entrypoints der understøtter hvad.
 
 | Metoder(zipcodes bruges som eksempel)          | Parametre                                             | Return |
