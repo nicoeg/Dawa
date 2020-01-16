@@ -23,7 +23,7 @@ return [
             'search',
             'byMunicipality',
             'byMunicipalities',
-            'inCircle'
+            'inCircle',
         ]
     ],
     'accessAddresses' => [
@@ -35,7 +35,7 @@ return [
             'search',
             'byMunicipality',
             'byMunicipalities',
-            'inCircle'
+            'inCircle',
         ]
     ],
     'streets' => [
@@ -43,11 +43,41 @@ return [
         'singular' => 'street',
         'methods' => [
             'general',
-            'signular',
+            'singular',
             'search',
             'byName',
             'byMunicipality',
             'byMunicipalities',
         ]
-    ]
+    ],
+    'municipalities' => [
+        'uri' => 'kommuner',
+        'singular' => 'municipality',
+        'methods' => [
+            'general',
+            'singular',
+            'search',
+            'byName',
+        ]
+    ],
+    'regions' => [
+        'uri' => 'regioner',
+        'singular' => 'region',
+        'methods' => [
+            'general',
+            'singular',
+            'search',
+            'byName',
+        ]
+    ],
+    'provinces' => [
+        'uri' => 'landsdele',
+        'singular' => 'province',
+        'methods' => [
+            'general',
+            'singular',
+            'search',
+            'byName',
+        ]
+    ],
 ];
