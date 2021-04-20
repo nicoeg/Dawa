@@ -75,10 +75,26 @@ class Dawa {
     private $perpage = 0;
     private $page = 0;
 
-    public function __construct() {
-        $this->client = new Client(['base_uri' => $this->base]);
+    /**
+     * @param array $config Guzzle client configuration settings
+     * @see \GuzzleHttp\Client
+     */
+    public function __construct($config = []) {
+        $this->client = new Client(array_merge($config, ['base_uri' => $this->base]));
 
         $this->apis = include __DIR__ . '/apis.php';
+    }
+
+    /**
+     * Creates a new client and sets the given config settings
+     * @param array $config Guzzle client configuration settings
+     * @see \GuzzleHttp\Client
+     * @return Dawa $this
+     */
+    public function guzzleConfig($config = []) {
+        $this->client = new Client(array_merge($config, ['base_uri' => $this->base]));
+
+        return $this;
     }
 
     /**
